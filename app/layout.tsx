@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Playfair_Display, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 // 🌸 Premium fonts (Fashion aesthetic)
 const playfair = Playfair_Display({
@@ -103,6 +104,9 @@ export default function RootLayout({
         <button className="fixed bottom-6 right-6 bg-pink-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition">
           🛍️
         </button>
+
+        {/* ✅ Vercel Analytics */}
+        <Analytics />
 
       </body>
     </html>
