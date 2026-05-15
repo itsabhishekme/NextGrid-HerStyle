@@ -1,53 +1,126 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Playfair_Display, Inter } from "next/font/google";
+import FloatingButtons from "@/components/FloatingButtons";
+
+import {
+  Playfair_Display,
+  Inter,
+  Poppins,
+} from "next/font/google";
+
 import { Analytics } from "@vercel/analytics/next";
 
-// 🌸 Premium fonts (Fashion aesthetic)
+import {
+  Sparkles,
+  ShieldCheck,
+  Truck,
+  Headphones,
+  Star,
+  Gem,
+  Crown,
+  BadgeCheck,
+} from "lucide-react";
+
+// 🌸 PREMIUM DISPLAY FONT
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
 });
 
+// ✨ CLEAN BODY FONT
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-// 🔥 Advanced SEO + Social Sharing
+// 🔥 MODERN UI FONT
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+// 🌍 ADVANCED SEO
 export const metadata: Metadata = {
-  title: "NextGrid HerStyle | Premium Women's Fashion",
+  metadataBase: new URL("https://herstyle.com"),
+
+  title: {
+    default: "NextGrid HerStyle | Luxury Fashion",
+    template: "%s | NextGrid HerStyle",
+  },
+
   description:
-    "Elevate your wardrobe with NextGrid HerStyle. Discover modern, elegant, and timeless fashion curated for confident women.",
+    "Luxury women's fashion ecommerce experience crafted with premium aesthetics, elegance, and modern style.",
+
   keywords: [
     "women fashion",
-    "premium clothing",
-    "indian fashion brand",
+    "luxury clothing",
+    "premium fashion",
     "nextgrid herstyle",
-    "online boutique",
+    "designer outfits",
+    "fashion ecommerce",
+    "modern women clothing",
   ],
+
+  authors: [
+    {
+      name: "NextGrid HerStyle",
+    },
+  ],
+
+  creator: "NextGrid HerStyle",
+
+  publisher: "NextGrid HerStyle",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
   openGraph: {
     title: "NextGrid HerStyle",
-    description: "Premium Women's Fashion Store",
+    description:
+      "Luxury fashion collections crafted for modern confident women.",
+
     url: "https://herstyle.com",
+
     siteName: "NextGrid HerStyle",
+
+    locale: "en_US",
+
+    type: "website",
+
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
+        alt: "NextGrid HerStyle",
       },
     ],
-    type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
+
     title: "NextGrid HerStyle",
-    description: "Luxury Women's Fashion",
+
+    description:
+      "Premium fashion collections crafted with elegance.",
+
+    images: ["/og-image.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -59,55 +132,341 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable}`}
       suppressHydrationWarning
+      className={`
+        ${playfair.variable}
+        ${inter.variable}
+        ${poppins.variable}
+      `}
     >
-      <body className="bg-gray-50 text-gray-900 antialiased scroll-smooth">
+      <body
+        className="
+          bg-[#fafafa]
+          text-gray-900
+          antialiased
+          overflow-x-hidden
+          scroll-smooth
+          font-[family:var(--font-inter)]
+        "
+      >
 
-        {/* 🌟 Announcement Bar */}
-        <div className="bg-black text-white text-center text-xs md:text-sm py-2 tracking-wide">
-          ✨ Summer Sale is Live — Flat 30% OFF on New Arrivals
+        {/* 🌈 GLOBAL BACKGROUND */}
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
+
+          {/* Pink Glow */}
+          <div className="absolute top-[-140px] left-[-140px] w-[450px] h-[450px] rounded-full bg-pink-300 opacity-20 blur-3xl animate-pulse"></div>
+
+          {/* Purple Glow */}
+          <div className="absolute bottom-[-140px] right-[-140px] w-[450px] h-[450px] rounded-full bg-purple-400 opacity-20 blur-3xl animate-pulse"></div>
+
+          {/* Indigo Glow */}
+          <div className="absolute top-[35%] left-[40%] w-[260px] h-[260px] rounded-full bg-indigo-300 opacity-10 blur-3xl"></div>
+
+          {/* Rose Glow */}
+          <div className="absolute top-[70%] left-[10%] w-[220px] h-[220px] rounded-full bg-rose-300 opacity-10 blur-3xl"></div>
+
+          {/* Gradient Mesh */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.2),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.12),transparent_30%)]"></div>
         </div>
 
-        {/* 🔝 Navbar (sticky handled inside component) */}
-        <Navbar />
+        {/* 🌟 TOP ANNOUNCEMENT BAR */}
+        <div className="relative overflow-hidden bg-black text-white border-b border-white/10">
 
-        {/* 🌸 Page Wrapper */}
-        <div className="relative">
+          {/* Glow */}
+          <div className="absolute inset-0 opacity-20">
 
-          {/* ✨ Decorative Background Layers */}
-          <div className="fixed inset-0 -z-10 overflow-hidden">
-            <div className="absolute top-[-120px] left-[-120px] w-[350px] h-[350px] bg-pink-300 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-            <div className="absolute bottom-[-140px] right-[-140px] w-[350px] h-[350px] bg-purple-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-            <div className="absolute top-[40%] left-[30%] w-[200px] h-[200px] bg-indigo-300 rounded-full blur-2xl opacity-10"></div>
+            <div className="absolute top-0 left-0 w-40 h-40 bg-pink-500 blur-3xl rounded-full"></div>
+
+            <div className="absolute right-0 top-0 w-40 h-40 bg-purple-500 blur-3xl rounded-full"></div>
           </div>
 
-          {/* 🌿 MAIN CONTENT */}
-          <main className="min-h-screen">
+          {/* Content */}
+          <div className="relative max-w-7xl mx-auto px-4 py-3">
 
-            {/* Container */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-14 py-8">
-              
-              {/* ✨ Page Transition Wrapper */}
-              <div className="animate-fadeIn">
-                {children}
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+
+              {/* LEFT */}
+              <div className="flex items-center gap-3 text-xs md:text-sm tracking-wide">
+
+                <div className="w-7 h-7 rounded-full bg-pink-500/20 flex items-center justify-center">
+                  <Sparkles
+                    size={14}
+                    className="text-pink-400"
+                  />
+                </div>
+
+                <span>
+                  Summer Sale Live — Flat 30% OFF on New Arrivals
+                </span>
               </div>
 
+              {/* CENTER */}
+              <div className="hidden xl:flex items-center gap-6 text-xs text-gray-300">
+
+                <div className="flex items-center gap-2">
+                  <Truck size={14} />
+                  Free Shipping
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={14} />
+                  Secure Checkout
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Headphones size={14} />
+                  24/7 Support
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <div className="flex items-center gap-3">
+
+                <div className="flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-xl border border-white/10">
+                  <Gem
+                    size={14}
+                    className="text-pink-300"
+                  />
+
+                  <span className="text-xs">
+                    Premium Collection
+                  </span>
+                </div>
+              </div>
             </div>
-          </main>
+          </div>
         </div>
 
-        {/* 🔻 Footer */}
+        {/* 🔝 NAVBAR */}
+        <Navbar />
+
+        {/* 🌸 MAIN WRAPPER */}
+        <div className="relative min-h-screen">
+
+          {/* GRID PATTERN */}
+          <div className="absolute inset-0 -z-10 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:90px_90px]"></div>
+
+          {/* 🌟 TOP GRADIENT BAR */}
+          <div className="h-2 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500"></div>
+
+          {/* 🌿 MAIN */}
+          <main className="relative min-h-screen">
+
+            {/* MAIN CONTAINER */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-14 py-10">
+
+              {/* PAGE TRANSITION */}
+              <div className="animate-fadeIn duration-700">
+                {children}
+              </div>
+            </div>
+          </main>
+
+          {/* 🌟 FEATURE SECTION */}
+          <section className="relative mt-24">
+
+            {/* Background */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+
+            <div className="relative max-w-7xl mx-auto px-6 py-20">
+
+              {/* Heading */}
+              <div className="text-center mb-16">
+
+                <div className="inline-flex items-center gap-2 bg-pink-100 text-pink-600 px-5 py-2 rounded-full text-sm font-medium mb-5">
+                  <Crown size={16} />
+                  Why Choose Us
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-black mb-5 font-[family:var(--font-playfair)]">
+                  Premium Fashion
+                  <span className="block bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                    Luxury Experience
+                  </span>
+                </h2>
+
+                <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                  Crafted with elegance, luxury aesthetics, and modern design
+                  to deliver an unforgettable fashion experience.
+                </p>
+              </div>
+
+              {/* GRID */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                {/* CARD 1 */}
+                <div className="group relative overflow-hidden rounded-[30px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 p-8">
+
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-pink-100 rounded-full blur-3xl opacity-50"></div>
+
+                  <div className="relative">
+
+                    <div className="w-16 h-16 rounded-3xl bg-pink-100 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                      <Truck className="text-pink-600" />
+                    </div>
+
+                    <h3 className="text-xl font-bold mb-3">
+                      Fast Delivery
+                    </h3>
+
+                    <p className="text-gray-500 leading-relaxed text-sm">
+                      Lightning-fast shipping across India with secure luxury packaging.
+                    </p>
+                  </div>
+                </div>
+
+                {/* CARD 2 */}
+                <div className="group relative overflow-hidden rounded-[30px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 p-8">
+
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-50"></div>
+
+                  <div className="relative">
+
+                    <div className="w-16 h-16 rounded-3xl bg-purple-100 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                      <ShieldCheck className="text-purple-600" />
+                    </div>
+
+                    <h3 className="text-xl font-bold mb-3">
+                      Secure Checkout
+                    </h3>
+
+                    <p className="text-gray-500 leading-relaxed text-sm">
+                      Trusted payment gateway with advanced security protection.
+                    </p>
+                  </div>
+                </div>
+
+                {/* CARD 3 */}
+                <div className="group relative overflow-hidden rounded-[30px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 p-8">
+
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+
+                  <div className="relative">
+
+                    <div className="w-16 h-16 rounded-3xl bg-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                      <Star className="text-indigo-600" />
+                    </div>
+
+                    <h3 className="text-xl font-bold mb-3">
+                      Premium Quality
+                    </h3>
+
+                    <p className="text-gray-500 leading-relaxed text-sm">
+                      Carefully curated luxury fashion collections with elegance.
+                    </p>
+                  </div>
+                </div>
+
+                {/* CARD 4 */}
+                <div className="group relative overflow-hidden rounded-[30px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 p-8">
+
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-rose-100 rounded-full blur-3xl opacity-50"></div>
+
+                  <div className="relative">
+
+                    <div className="w-16 h-16 rounded-3xl bg-rose-100 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                      <BadgeCheck className="text-rose-600" />
+                    </div>
+
+                    <h3 className="text-xl font-bold mb-3">
+                      Trusted Brand
+                    </h3>
+
+                    <p className="text-gray-500 leading-relaxed text-sm">
+                      Loved by thousands of customers for luxury fashion experiences.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* EXTRA SECTION */}
+              <div className="mt-24 relative overflow-hidden rounded-[40px] bg-gradient-to-r from-black via-gray-900 to-black p-10 md:p-16 shadow-2xl">
+
+                {/* Glow */}
+                <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-pink-500/20 blur-3xl rounded-full"></div>
+
+                <div className="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-purple-500/20 blur-3xl rounded-full"></div>
+
+                <div className="relative grid lg:grid-cols-2 gap-12 items-center">
+
+                  {/* LEFT */}
+                  <div>
+
+                    <div className="inline-flex items-center gap-2 bg-white/10 border border-white/10 px-5 py-2 rounded-full text-white text-sm mb-6">
+                      <Sparkles size={16} />
+                      Fashion Excellence
+                    </div>
+
+                    <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6 font-[family:var(--font-playfair)]">
+                      Redefining Modern
+                      <span className="block bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+                        Luxury Fashion
+                      </span>
+                    </h2>
+
+                    <p className="text-gray-400 leading-relaxed max-w-xl">
+                      Experience premium fashion collections designed with
+                      elegance, luxury craftsmanship, and modern confidence.
+                    </p>
+                  </div>
+
+                  {/* RIGHT */}
+                  <div className="grid grid-cols-2 gap-6">
+
+                    <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+                      <h3 className="text-4xl font-black text-white">
+                        25K+
+                      </h3>
+
+                      <p className="text-gray-400 mt-2">
+                        Happy Customers
+                      </p>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+                      <h3 className="text-4xl font-black text-white">
+                        500+
+                      </h3>
+
+                      <p className="text-gray-400 mt-2">
+                        Premium Products
+                      </p>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+                      <h3 className="text-4xl font-black text-white">
+                        4.9★
+                      </h3>
+
+                      <p className="text-gray-400 mt-2">
+                        Customer Rating
+                      </p>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-6">
+                      <h3 className="text-4xl font-black text-white">
+                        24/7
+                      </h3>
+
+                      <p className="text-gray-400 mt-2">
+                        Customer Support
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* 🔻 FOOTER */}
         <Footer />
 
-        {/* 🔥 Floating Action Button (Quick UX boost) */}
-        <button className="fixed bottom-6 right-6 bg-pink-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition">
-          🛍️
-        </button>
+        {/* 🌟 FLOATING BUTTONS */}
+        <FloatingButtons />
 
-        {/* ✅ Vercel Analytics */}
+        {/* 🔥 ANALYTICS */}
         <Analytics />
-
       </body>
     </html>
   );
