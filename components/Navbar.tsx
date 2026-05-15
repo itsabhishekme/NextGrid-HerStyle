@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
@@ -82,12 +83,20 @@ export default function Navbar() {
             {/* 🌸 LOGO */}
             <Link
               href="/"
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-3 group"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center text-white font-bold shadow-lg group-hover:scale-110 transition">
-                N
+              {/* LOGO IMAGE */}
+              <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg border border-pink-100 group-hover:scale-110 transition duration-300 bg-white">
+                <Image
+                  src="/favicon.ico"
+                  alt="Logo"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
 
+              {/* BRAND TEXT */}
               <div>
                 <h1 className="text-2xl font-black tracking-tight bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
                   NextGrid
@@ -230,14 +239,27 @@ export default function Navbar() {
 
             {/* HEADER */}
             <div className="flex items-center justify-between p-6 border-b">
-              <div>
-                <h2 className="text-2xl font-black text-pink-600">
-                  NextGrid
-                </h2>
+              <div className="flex items-center gap-3">
 
-                <p className="text-xs text-gray-500 tracking-[4px] uppercase">
-                  HerStyle
-                </p>
+                {/* MOBILE LOGO */}
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-pink-100 shadow-md">
+                  <Image
+                    src="/favicon.ico"
+                    alt="Logo"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                <div>
+                  <h2 className="text-2xl font-black text-pink-600">
+                    NextGrid
+                  </h2>
+
+                  <p className="text-xs text-gray-500 tracking-[4px] uppercase">
+                    HerStyle
+                  </p>
+                </div>
               </div>
 
               <button

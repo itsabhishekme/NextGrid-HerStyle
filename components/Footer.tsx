@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import {
   Send,
@@ -260,10 +261,18 @@ export default function Footer() {
             {/* LOGO */}
             <div className="flex items-center gap-4 mb-8">
 
-              <div className="w-14 h-14 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                N
+              {/* FAVICON LOGO */}
+              <div className="relative w-16 h-16 rounded-full overflow-hidden border border-white/10 shadow-2xl bg-white">
+                <Image
+                  src="/favicon.ico"
+                  alt="NextGrid Logo"
+                  fill
+                  priority
+                  className="object-cover"
+                />
               </div>
 
+              {/* BRAND TEXT */}
               <div>
                 <h2 className="text-3xl font-black text-white">
                   NextGrid
