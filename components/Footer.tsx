@@ -264,7 +264,7 @@ export default function Footer() {
               {/* FAVICON LOGO */}
               <div className="relative w-16 h-16 rounded-full overflow-hidden border border-white/10 shadow-2xl bg-white">
                 <Image
-                  src="/favicon.ico"
+                  src="/logo.png"
                   alt="NextGrid Logo"
                   fill
                   priority

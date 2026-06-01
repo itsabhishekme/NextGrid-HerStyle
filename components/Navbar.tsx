@@ -74,7 +74,7 @@ export default function Navbar() {
               {/* LOGO IMAGE */}
               <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg border border-pink-100 group-hover:scale-110 transition duration-300 bg-white">
                 <Image
-                  src="/favicon.ico"
+                  src="/logo.png"
                   alt="Logo"
                   fill
                   className="object-cover"
