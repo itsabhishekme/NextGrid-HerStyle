@@ -53,21 +53,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* 🌈 TOP BAR */}
-      <div className="bg-gradient-to-r from-pink-600 via-rose-500 to-purple-600 text-white text-sm py-2 px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <p className="flex items-center gap-2 font-medium">
-            <Sparkles size={14} />
-            Free shipping on all orders above ₹999
-          </p>
 
-          <div className="hidden md:flex items-center gap-6 text-xs">
-            <span>Track Order</span>
-            <span>Help Center</span>
-            <span>India</span>
-          </div>
-        </div>
-      </div>
 
       {/* 🌟 MAIN NAVBAR */}
       <nav

@@ -69,43 +69,6 @@ export default function Home() {
 
       <div className="space-y-32">
 
-        {/* 🌟 ANNOUNCEMENT */}
-        <section className="relative overflow-hidden rounded-[30px] bg-black text-white px-6 py-5 shadow-2xl">
-
-          {/* Glow */}
-          <div className="absolute inset-0 opacity-20">
-
-            <div className="absolute top-0 left-0 w-40 h-40 bg-pink-500 blur-3xl rounded-full"></div>
-
-            <div className="absolute right-0 top-0 w-40 h-40 bg-purple-500 blur-3xl rounded-full"></div>
-          </div>
-
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-4">
-
-            <div className="flex items-center gap-3">
-
-              <Sparkles className="text-pink-400" />
-
-              <p className="tracking-wide text-sm md:text-base">
-                Summer Sale Live — Flat 30% OFF Premium Collections
-              </p>
-            </div>
-
-            <div className="flex items-center gap-6 text-sm text-gray-300">
-
-              <div className="flex items-center gap-2">
-                <Truck size={16} />
-                Free Shipping
-              </div>
-
-              <div className="flex items-center gap-2">
-                <ShieldCheck size={16} />
-                Secure Checkout
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* 🌸 HERO */}
         <Hero />
 

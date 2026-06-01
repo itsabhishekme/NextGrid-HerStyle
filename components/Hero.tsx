@@ -150,10 +150,6 @@ export default function Hero() {
         <Sparkles size={18} className="text-yellow-300" />
 
         <div>
-          <h4 className="font-semibold">
-            Premium Collection
-          </h4>
-
           <p className="text-xs text-white/70">
             New arrivals every week
           </p>
